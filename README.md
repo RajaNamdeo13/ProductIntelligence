@@ -1,10 +1,26 @@
 # 🚀 ProductPulse
 
-### Product Analytics & Experimentation Platform
+<h3 align="center">Product Analytics & Experimentation Platform</h3>
 
-**Analyze user behavior · Track feature adoption · Run A/B experiments · Monitor retention**
+<p align="center">
+  Analyze user behavior · Track feature adoption · Run A/B experiments · Monitor retention
+</p>
 
-`Node.js` `React` `MongoDB` `TypeScript` `MIT License`
+<p align="center">
+  <img src="https://img.shields.io/badge/Node.js-18.x-green" />
+  <img src="https://img.shields.io/badge/React-18.x-61DAFB" />
+  <img src="https://img.shields.io/badge/MongoDB-Local%20%2F%20Mongoose-green" />
+  <img src="https://img.shields.io/badge/TypeScript-5.x-blue" />
+  <img src="https://img.shields.io/badge/License-MIT-blue" />
+</p>
+
+<p align="center">
+  <a href="#features">Features</a> ·
+  <a href="#architecture">Architecture</a> ·
+  <a href="#api-reference">API Reference</a> ·
+  <a href="#getting-started">Getting Started</a> ·
+  <a href="#testing">Testing</a>
+</p>
 
 ---
 
@@ -12,98 +28,122 @@
 
 ProductPulse is a full-stack product analytics platform designed to help product teams understand user behavior and make data-driven decisions.
 
-It brings together key product metrics such as user activity, conversion funnels, retention, feature adoption, and A/B experiment performance in a single dashboard.
+It provides insights into user activity, conversion funnels, retention trends, feature adoption, and A/B experiments using event-based product data.
 
-The platform supports event-based analytics, CSV data ingestion, funnel analysis, cohort retention, feature usage tracking, and experimentation workflows.
+The platform brings these workflows together in one dashboard so teams can identify product trends, investigate user behavior, and evaluate product changes.
+
+---
+
+## 🖼️ UI Preview
+
+### Landing Page
+
+![ProductPulse Landing Page](screenshots/landing-page.png)
+
+### Dashboard
+
+![ProductPulse Dashboard](screenshots/dashboard.png)
+
+### Funnel Analysis
+
+![ProductPulse Funnel Analysis](screenshots/funnel-analysis.png)
+
+### Retention Analysis
+
+![ProductPulse Retention](screenshots/retention.png)
+
+### Feature Adoption
+
+![ProductPulse Feature Adoption](screenshots/feature-adoption.png)
+
+### A/B Experiments
+
+![ProductPulse Experiments](screenshots/experiments.png)
 
 ---
 
 ## ✨ Features
 
-### 🔐 Authentication & Security
+### 🔐 Authentication
+- User registration and login
+- JWT-based authentication
+- Protected application routes
 
-* JWT-based authentication
-* Secure user registration and login
-* Protected application routes
-* User-specific data access
-* Authentication middleware
+### 📊 Product Analytics
+- Daily and monthly active users
+- Event-based analytics
+- Conversion metrics
+- KPI monitoring
+- Product usage trends
 
-### 📊 Analytics Dashboard
+### 🔻 Funnel Analysis
+Analyze how users move through a defined product journey and identify where users drop off.
 
-* **DAU / MAU** — Daily and Monthly Active Users
-* **Conversion Rate** — Track end-to-end conversion
-* **Event Analytics** — Analyze user events
-* **KPI Monitoring** — Monitor important product metrics
+Example:
 
-### 🔽 Funnel Analysis
+`Landing Page → Product View → Add to Cart → Checkout → Purchase`
 
-Analyze users across multi-step journeys:
+### 🔁 Retention Analysis
+Track returning users across different time periods and understand how engagement changes over time.
 
-```text
-Signup → Activate → Purchase
-```
+### 🚀 Feature Adoption
+Measure how frequently users interact with individual product features and compare adoption across users.
 
-* Step-wise user breakdown
-* Conversion rate at each stage
-* Drop-off identification
-* Funnel performance analysis
+### 🧪 A/B Experimentation
+Create experiments with control and variant groups and compare their performance using measurable product metrics.
 
-### 🔁 Retention Analytics
-
-* Cohort-based retention analysis
-* Weekly retention tracking
-* User engagement trends
-* Retention matrix visualization
-
-### 🧩 Feature Adoption
-
-* Feature usage analytics
-* Feature adoption percentages
-* Most-used features
-* Least-used features
-* User interaction tracking
-
-### 🧪 A/B Testing & Experimentation
-
-* Create and manage experiments
-* Support multiple experiment variants
-* Compare conversion performance
-* Calculate statistical significance
-* Identify experiment winners
-
-### 📁 CSV Data Ingestion
-
-* Upload event data through CSV files
-* Automated event processing
-* Upload history tracking
-* User-specific datasets
-
----
+### 📥 Event Data Ingestion
+Upload CSV-based event data and process it for analytics and visualization.
 
 ## 🏗️ Architecture
 
 ```text
-┌──────────────────────────────────┐
-│          React Frontend          │
-│   Vite · TypeScript · Tailwind   │
-└───────────────┬──────────────────┘
-                │
-                │ REST API
-                ▼
-┌──────────────────────────────────┐
-│        Express Backend            │
-│     JWT · REST APIs · Multer      │
-└───────────────┬──────────────────┘
-                │
-                │ Mongoose ODM
-                ▼
-┌──────────────────────────────────┐
-│        MongoDB Database           │
-│ Users · Events · Experiments      │
-└──────────────────────────────────┘
-```
+┌──────────────────────────────┐
+│        React Frontend        │
+│     TypeScript + Vite       │
+│   Tailwind + Recharts       │
+└──────────────┬───────────────┘
+               │
+               │ REST API
+               ▼
+┌──────────────────────────────┐
+│       Express Backend        │
+│      Node.js + TypeScript    │
+│                              │
+│ Authentication               │
+│ Analytics Engine             │
+│ Funnel Analysis              │
+│ Retention Analysis           │
+│ Experimentation              │
+└──────────────┬───────────────┘
+               │
+               ▼
+┌──────────────────────────────┐
+│          MongoDB             │
+│      Mongoose ODM            │
+│                              │
+│ Users · Events · Experiments │
+│ Funnels · Analytics         │
+└──────────────────────────────┘
 
----
+
+## Data Flow
+
+
+User Events
+     ↓
+Event Ingestion
+     ↓
+MongoDB
+     ↓
+Analytics Processing
+     ↓
+Product Metrics
+     ↓
+Dashboard & Reports
+     ↓
+Product Decisions
+
 
 ## 🛠️ Tech Stack
 
